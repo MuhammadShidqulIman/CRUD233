@@ -116,4 +116,5 @@ namespace CRUDSederhana
                             string query = "DELETE FROM Mahasisma WHERE NIM = @NIM"; // Query untuk menghapus data
                             using (SqlCommand cmd = new SqlCommand(query, conn))
                             {
+                                cmd.Parameters.AddWithValue("@NIM", nim); // Menambahkan parameter ke query
                                
