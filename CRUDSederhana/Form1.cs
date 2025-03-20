@@ -117,4 +117,7 @@ namespace CRUDSederhana
                             using (SqlCommand cmd = new SqlCommand(query, conn))
                             {
                                 cmd.Parameters.AddWithValue("@NIM", nim); // Menambahkan parameter ke query
-                               
+                                int rowsAffected = cmd.ExecuteNonQuery(); // Menjalankan query
+                                if (rowsAffected > 0)
+                                {
+                                    
