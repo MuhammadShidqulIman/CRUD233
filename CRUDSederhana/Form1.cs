@@ -33,4 +33,11 @@ namespace CRUDSederhana
             txtNIM.Focus(); // Fokus kembali ke TextBox NIM
         }
 
-        
+        // Fungsi untuk menampilkan data di DataGridView
+        private void LoadData()
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    
