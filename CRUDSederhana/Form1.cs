@@ -43,4 +43,5 @@ namespace CRUDSederhana
                     conn.Open(); // Membuka koneksi ke database
                     string query = "SELECT NIM AS [NIM], Nama, Email, Telepon, Alamat FROM Mahasiswa"; // Query untuk mengambil data
                     SqlDataAdapter da = new SqlDataAdapter(query, conn); // Menggunakan SqlDataAdapter untuk mengisi DataTable
-                   
+                    DataTable dt = new DataTable(); // Membuat DataTable untuk menyimpan data
+                    
