@@ -70,4 +70,7 @@ namespace CRUDSederhana
                         return;
                     }
                     conn.Open(); // Membuka koneksi ke database
-                   
+                    string query = "INSERT INTO Mahasisma (NIM, Nama, Email, Telepon, Alamat) VALUES (@NIM, @Nama, @Email, @Telepon, @Alamat)"; // Query untuk menambahkan data
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                       
