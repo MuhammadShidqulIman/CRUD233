@@ -48,4 +48,12 @@ namespace CRUDSederhana
                     dgvMahasiswa.AutoGenerateColumns = true; // Mengatur kolom DataGridView agar dihasilkan otomatis
                     dgvMahasiswa.DataSource = dt; // Menghubungkan DataGridView dengan DataTable
                     ClearForm(); // Mengosongkan form setelah data dimuat
-                
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message, "Masalah", MessageBoxButtons.OK, MessageBoxIcon.Error); // Menampilkan pesan error
+                }
+            }
+        }
+
+     
