@@ -160,5 +160,13 @@ namespace CRUDSederhana
             {
                 DataGridViewRow row = dgvMahasiswa.Rows[e.RowIndex]; // Mengambil baris yang diklik
 
-               
+                // Mengisi TextBox dengan data dari baris yang diklik
+                txtNIM.Text = row.Cells["NIM"].Value?.ToString();
+                txtNama.Text = row.Cells["Nama"].Value?.ToString();
+                txtEmail.Text = row.Cells["Email"].Value?.ToString();
+                txtTelepon.Text = row.Cells["Telepon"].Value?.ToString();
+                txtAlamat.Text = row.Cells["Alamat"].Value?.ToString();
+            }
+        }
+    }
 }
