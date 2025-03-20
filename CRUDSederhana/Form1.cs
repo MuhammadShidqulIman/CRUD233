@@ -153,4 +153,7 @@ namespace CRUDSederhana
             "Debugging DataGridView", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        
+        // Event saat sel di DataGridView diklik
+        private void dgvMahasiswa_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
