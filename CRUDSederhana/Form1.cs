@@ -41,4 +41,5 @@ namespace CRUDSederhana
                 try
                 {
                     conn.Open(); // Membuka koneksi ke database
+                    string query = "SELECT NIM AS [NIM], Nama, Email, Telepon, Alamat FROM Mahasiswa"; // Query untuk mengambil data
                     
