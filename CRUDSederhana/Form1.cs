@@ -22,3 +22,12 @@ namespace CRUDSederhana
         }
 
         
+        private void ClearForm()
+        {
+            txtNIM.Clear(); // Mengosongkan TextBox NIM
+            txtNama.Clear(); // Mengosongkan TextBox Nama
+            txtEmail.Clear(); // Mengosongkan TextBox Email
+            txtTelepon.Clear(); // Mengosongkan TextBox Telepon
+            txtAlamat.Clear(); // Mengosongkan TextBox Alamat
+
+      
