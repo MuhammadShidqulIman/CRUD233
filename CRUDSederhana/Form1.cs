@@ -82,4 +82,6 @@ namespace CRUDSederhana
                         int rowsAffected = cmd.ExecuteNonQuery(); // Menjalankan query
                         if (rowsAffected > 0)
                         {
-                       
+                            MessageBox.Show("Data berhasil ditambahkan!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information); // Pesan sukses
+                            LoadData(); // Memuat ulang data
+                           
