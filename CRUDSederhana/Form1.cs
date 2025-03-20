@@ -40,4 +40,5 @@ namespace CRUDSederhana
             {
                 try
                 {
+                    conn.Open(); // Membuka koneksi ke database
                     
