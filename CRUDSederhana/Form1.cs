@@ -92,4 +92,55 @@ namespace CRUDSederhana
                         }
                     }
                 }
-                
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message, "Masalah", MessageBoxButtons.OK, MessageBoxIcon.Error); // Menampilkan pesan error
+                }
+            }
+        }
+
+        // Fungsi untuk menghapus data (DELETE)
+        private void BtnHapus(object sender, EventArgs e)
+        {
+            if (dgvMahasiswa.SelectedRows.Count > 0) // Memeriksa apakah ada baris yang dipilih
+            {
+                DialogResult confirm = MessageBox.Show("Yakin ingin menghapus data ini?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question); // Konfirmasi penghapusan
+                if (confirm == DialogResult.Yes)
+                {
+                    using (SqlConnection conn = new SqlConnection(connectionString))
+                    {
+                        try
+                        {
+                            string nim = dgvMahasiswa.SelectedRows[0].Cells["NIM"].Value.ToString(); // Mengambil NIM dari baris yang dipilih
+                            conn.Open(); // Membuka koneksi ke database
+                            string query = "DELETE FROM Mahasisma WHERE NIM = @NIM"; // Query untuk menghapus data
+                            using (SqlCommand cmd = new SqlCommand(query, conn))
+                            {
+                                cmd.Parameters.AddWithValue("@NIM", nim); // Menambahkan parameter ke query
+                                int rowsAffected = cmd.ExecuteNonQuery(); // Menjalankan query
+                                if (rowsAffected > 0)
+                                {
+                                    MessageBox.Show("Data berhasil dihapus!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information); // Pesan sukses
+                                    LoadData(); // Memuat ulang data
+                                    ClearForm(); // Mengosongkan form
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Data tidak ditemukan atau gagal dihapus!", "Masalah", MessageBoxButtons.OK, MessageBoxIcon.Error); // Pesan error
+                                }
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error: " + ex.Message, "Masalah", MessageBoxButtons.OK, MessageBoxIcon.Error); // Menampilkan pesan error
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Pilih data yang ingin dihapus!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning); // Pesan peringatan
+            }
+        }
+
+        
