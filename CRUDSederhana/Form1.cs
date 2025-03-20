@@ -84,4 +84,12 @@ namespace CRUDSederhana
                         {
                             MessageBox.Show("Data berhasil ditambahkan!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information); // Pesan sukses
                             LoadData(); // Memuat ulang data
-                           
+                            ClearForm(); // Mengosongkan form
+                        }
+                        else
+                        {
+                            MessageBox.Show("Data tidak berhasil ditambahkan!", "Masalah", MessageBoxButtons.OK, MessageBoxIcon.Error); // Pesan error
+                        }
+                    }
+                }
+                
