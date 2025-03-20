@@ -45,4 +45,5 @@ namespace CRUDSederhana
                     SqlDataAdapter da = new SqlDataAdapter(query, conn); // Menggunakan SqlDataAdapter untuk mengisi DataTable
                     DataTable dt = new DataTable(); // Membuat DataTable untuk menyimpan data
                     da.Fill(dt); // Mengisi DataTable dengan data dari database
+                    dgvMahasiswa.AutoGenerateColumns = true; // Mengatur kolom DataGridView agar dihasilkan otomatis
                     
