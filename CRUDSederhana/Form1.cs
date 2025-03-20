@@ -146,6 +146,6 @@ namespace CRUDSederhana
         // Fungsi untuk merefresh tampilan DataGridView
         private void BtnRefresh(object sender, EventArgs e)
         {
+            LoadData(); // Memuat ulang data
 
-    }
-}
+            
