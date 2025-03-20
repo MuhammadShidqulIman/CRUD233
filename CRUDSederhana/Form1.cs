@@ -47,4 +47,5 @@ namespace CRUDSederhana
                     da.Fill(dt); // Mengisi DataTable dengan data dari database
                     dgvMahasiswa.AutoGenerateColumns = true; // Mengatur kolom DataGridView agar dihasilkan otomatis
                     dgvMahasiswa.DataSource = dt; // Menghubungkan DataGridView dengan DataTable
-                    
+                    ClearForm(); // Mengosongkan form setelah data dimuat
+                
