@@ -111,4 +111,9 @@ namespace CRUDSederhana
                     {
                         try
                         {
-                            
+                            string nim = dgvMahasiswa.SelectedRows[0].Cells["NIM"].Value.ToString(); // Mengambil NIM dari baris yang dipilih
+                            conn.Open(); // Membuka koneksi ke database
+                            string query = "DELETE FROM Mahasisma WHERE NIM = @NIM"; // Query untuk menghapus data
+                            using (SqlCommand cmd = new SqlCommand(query, conn))
+                            {
+                               
