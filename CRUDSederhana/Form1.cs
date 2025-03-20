@@ -30,4 +30,7 @@ namespace CRUDSederhana
             txtTelepon.Clear(); // Mengosongkan TextBox Telepon
             txtAlamat.Clear(); // Mengosongkan TextBox Alamat
 
-      
+            txtNIM.Focus(); // Fokus kembali ke TextBox NIM
+        }
+
+        
