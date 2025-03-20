@@ -102,4 +102,13 @@ namespace CRUDSederhana
         // Fungsi untuk menghapus data (DELETE)
         private void BtnHapus(object sender, EventArgs e)
         {
-           
+            if (dgvMahasiswa.SelectedRows.Count > 0) // Memeriksa apakah ada baris yang dipilih
+            {
+                DialogResult confirm = MessageBox.Show("Yakin ingin menghapus data ini?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question); // Konfirmasi penghapusan
+                if (confirm == DialogResult.Yes)
+                {
+                    using (SqlConnection conn = new SqlConnection(connectionString))
+                    {
+                        try
+                        {
+                            
