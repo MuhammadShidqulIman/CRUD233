@@ -73,4 +73,10 @@ namespace CRUDSederhana
                     string query = "INSERT INTO Mahasisma (NIM, Nama, Email, Telepon, Alamat) VALUES (@NIM, @Nama, @Email, @Telepon, @Alamat)"; // Query untuk menambahkan data
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
-                       
+                        // Menambahkan parameter ke query
+                        cmd.Parameters.AddWithValue("@NIM", txtNIM.Text.Trim());
+                        cmd.Parameters.AddWithValue("@Nama", txtNama.Text.Trim());
+                        cmd.Parameters.AddWithValue("@Email", txtEmail.Text.Trim());
+                        cmd.Parameters.AddWithValue("@Telepon", txtTelepon.Text.Trim());
+                        cmd.Parameters.AddWithValue("@Alamat", txtAlamat.Text.Trim());
+                        
