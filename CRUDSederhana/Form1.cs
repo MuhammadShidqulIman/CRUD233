@@ -156,4 +156,9 @@ namespace CRUDSederhana
         // Event saat sel di DataGridView diklik
         private void dgvMahasiswa_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+            if (e.RowIndex >= 0) // Memastikan baris yang valid diklik
+            {
+                DataGridViewRow row = dgvMahasiswa.Rows[e.RowIndex]; // Mengambil baris yang diklik
+
+               
+}
